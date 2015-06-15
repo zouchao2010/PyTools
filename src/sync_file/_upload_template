@@ -1,0 +1,7 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+spawn rsync -ravz -e "ssh -p {0}" {1} {2}
+expect "*assword:"
+send "{3}\r"
+interact
